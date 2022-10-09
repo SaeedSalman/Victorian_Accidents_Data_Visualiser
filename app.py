@@ -26,7 +26,7 @@ hide_menu = """
 </style>
 """
 st.set_page_config(
-        page_title="Victorian Crash Stats",
+        page_title="Victorian Accidents Data Visualiser",
         layout="wide"
 )
 st.markdown(hide_menu, unsafe_allow_html=True)
