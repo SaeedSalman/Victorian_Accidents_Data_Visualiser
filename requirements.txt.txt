@@ -19,3 +19,13 @@ Send2Trash==1.5.0
 six==1.15.0
 smmap==3.0.4
 streamlit==0.72.0
+
+### Dependencies for Core Plotly Functionality  ###
+###                                             ###
+### To install, run:                            ###
+###      $ pip install -r requirements.txt      ###
+###                                             ###
+###################################################
+
+## retrying requests ##
+tenacity>=6.2.0
