@@ -104,7 +104,7 @@ else:
 
 
 # Main Page 
-st.title(":bar_chart: Victorian Accident Stats")
+st.title(":bar_chart: Victorian Accidents Data Visualiser")
 st.markdown("##")
 total_accidents = int(df_selection["OBJECTID"].count())
 
