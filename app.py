@@ -87,7 +87,7 @@ if all:                                             #Checks to see if user click
 alcohol = st.sidebar.checkbox("Include Alcohol Trends")    
 
 # Retrieves data based on which query the user has selected
-if not lightCondition:
+if not lightCondition and not accidentType:
     df_selection = df.query(
     " (ACCIDENT_TYPE == @accidentType) and (ACCIDENT_DATE >= @start_date_input) and (ACCIDENT_DATE < @end_date_input)"
 )
@@ -96,7 +96,8 @@ elif not accidentType:
     df_selection = df.query(
     " (LIGHT_CONDITION == @lightCondition) and (ACCIDENT_DATE >= @start_date_input) and (ACCIDENT_DATE < @end_date_input)"
 )
-elif not lightCondition and not accidentType:
+    
+elif not lightCondition:
     df_selection = df.query(
     "(ACCIDENT_DATE >= @start_date_input) and (ACCIDENT_DATE < @end_date_input)"
 )   
@@ -118,8 +119,6 @@ with left_column:
 
 st.markdown("---")
 st.dataframe(df_selection) 
-
-
 
 # LIGHT CONDITION CHART
 light_condition_chart = (
