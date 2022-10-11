@@ -96,6 +96,10 @@ elif not accidentType:
     df_selection = df.query(
     " (LIGHT_CONDITION == @lightCondition) and (ACCIDENT_DATE >= @start_date_input) and (ACCIDENT_DATE < @end_date_input)"
 )
+elif not lightCondition and not accidentType:
+    df_selection = df.query(
+    "(ACCIDENT_DATE >= @start_date_input) and (ACCIDENT_DATE < @end_date_input)"
+)   
 else:
     df_selection = df.query(
         "(LIGHT_CONDITION == @lightCondition) and (ACCIDENT_TYPE == @accidentType) and (ACCIDENT_DATE >= @start_date_input) and (ACCIDENT_DATE < @end_date_input)"
