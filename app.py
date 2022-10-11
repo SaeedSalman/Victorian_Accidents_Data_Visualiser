@@ -111,9 +111,9 @@ total_accidents = int(df_selection["OBJECTID"].count())
 left_column, middle_column, right_column = st.columns(3)
 with left_column:
     st.subheader(f" Total Accidents: {total_accidents:,}") # changed this to be inline
-    #st.subheader(f"{total_accidents:,}")
-st.markdown("---")
 
+st.markdown("---")
+st.dataframe(df_selection) 
 
 
 
@@ -180,7 +180,6 @@ fig_alcohol_trend = px.bar(
 )
 
 if lightCondition:   
-    st.dataframe(df_selection)   
     st.plotly_chart(fig_light_condition, use_container_width=True)
     
     if accidentType:
@@ -191,7 +190,6 @@ if lightCondition:
         st.plotly_chart(fig_alcohol_trend, use_container_width=True)
         
 elif accidentType:
-    st.dataframe(df_selection)
     st.plotly_chart(fig_accident_type, use_container_width=True)
     st.plotly_chart(fig_accident_hourly, use_container_width=True)
 
