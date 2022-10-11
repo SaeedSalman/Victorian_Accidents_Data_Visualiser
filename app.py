@@ -89,7 +89,7 @@ alcohol = st.sidebar.checkbox("Include Alcohol Trends")
 # Retrieves data based on which query the user has selected
 if not lightCondition and not accidentType:
     df_selection = df.query(
-    " (ACCIDENT_TYPE == @accidentType) and (ACCIDENT_DATE >= @start_date_input) and (ACCIDENT_DATE < @end_date_input)"
+    "(ACCIDENT_DATE >= @start_date_input) and (ACCIDENT_DATE < @end_date_input)"
 )
     
 elif not accidentType:
@@ -99,7 +99,7 @@ elif not accidentType:
     
 elif not lightCondition:
     df_selection = df.query(
-    "(ACCIDENT_DATE >= @start_date_input) and (ACCIDENT_DATE < @end_date_input)"
+    "(ACCIDENT_TYPE == @accidentType) and (ACCIDENT_DATE >= @start_date_input) and (ACCIDENT_DATE < @end_date_input)"
 )   
 else:
     df_selection = df.query(
